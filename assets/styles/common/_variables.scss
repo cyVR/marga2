@@ -1,0 +1,18 @@
+// Glyphicons font path
+$font-path: "../fonts/"; // Grid settings
+// Colors
+$background-main: #1f0341;
+$background-home: #5541D8;
+$font-color: #f58285;
+$accent-color: #f58285;
+$accent-color0: rgba(245, 130, 133, 0);
+$border-color: #f58285;
+$red: random(256)-1;
+$green: random(256)-1;
+$blue: random(256)-1;
+$alpha: 1; //Elements
+$table-border: 1px solid $border-color; // media query sizes
+$screen-lg2-min: 1921px;
+$screen-lg2-max: ($screen-lg2-min - 1)!default;
+$screen-lg3-min: 1681px;
+$screen-lg3-max: ($screen-lg3-min - 1)!default;

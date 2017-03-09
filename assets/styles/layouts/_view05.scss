@@ -1,0 +1,40 @@
+.viewFifth {
+  @include scrollSection();
+}
+
+.wipeSlider {
+  @include fullScreenWindow();
+
+  &__box {
+    @include fullScreenWindow();
+    position: relative;
+    perspective: 1000px;
+  }
+
+  &__window {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+
+  &__slide {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    @for $i from 1 to 7 {
+      &:nth-of-type(#{$i}) {
+        //background: url('../images/mon#{$i}.jpg')!important;
+        //background-size: cover;
+        @include randomColor();
+      }
+    }
+  }
+}

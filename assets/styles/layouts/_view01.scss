@@ -1,0 +1,61 @@
+.viewOne {
+  @include scrollSection(250vh);
+  position: relative;
+  overflow: hidden;
+  background: $background-home;
+
+  &__fixedContainer {
+    @include fullScreenWindow();
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    &.sticked {
+      position: fixed;
+      bottom: auto;
+    }
+
+    &--text {
+      font-family: 'RationalTWDisplay-Bold';
+      font-size: 127px;
+      line-height: 1;
+      color: #fff;
+      position: absolute;
+    }
+
+    &--video {
+      & > video {
+        //transform: translateZ(0);
+      }
+    }
+  }
+
+  &__video {
+    //position: absolute;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(50%) translateY(0%);
+    background: url("polina.jpg") no-repeat;
+    background-size: cover;
+
+    &.sticked {
+      position: fixed;
+      bottom: auto;
+      top: 50%;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+}

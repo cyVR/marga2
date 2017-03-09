@@ -1,0 +1,131 @@
+.viewSecond {
+  @include scrollSection();
+  @include fullPageFlex();
+}
+
+.aboutChart {
+  margin-left: 13.65vw;
+
+  & > img {
+    width: 35vw;
+    height: auto;
+  }
+}
+
+.aboutTable {
+  //min-width: 768px;
+  @include flexTable(36.875vw);
+  margin-right: 6.927vw;
+
+  &__row {
+    &--title {
+      font-family: 'RationalTWDisplay-SemiBold';
+      font-size: 19px;
+      @include flexTable__rowFlex(78.88%);
+      @media (max-width: $screen-lg2-max) {
+        font-size: 17px;
+      }
+      @media (max-width: $screen-lg3-max) {
+        font-size: 13px;
+      }
+
+      & > div:nth-of-type(2) {
+        text-align: center;
+      }
+    }
+
+    &--skills {
+      font-size: 19px;
+      @include flexTable__rowFlex(73.79%);
+      @media (max-width: $screen-lg2-max) {
+        font-size: 17px;
+      }
+      @media (max-width: $screen-lg3-max) {
+        font-size: 13px;
+      }
+    }
+
+    &--description {
+      line-height: 1.684em;
+      @include flexTable__rowFlex(84.25%, auto, false);
+      @media (max-width: $screen-lg2-max) {
+        font-size: 13px;
+
+        & > div {
+          padding-top: 17px;
+          padding-bottom: 17px;
+        }
+      }
+      @media (max-width: $screen-lg3-max) {
+        font-size: 10px;
+      }
+
+      &Absolute {
+        @include flexTable__Absolute(0, 0, 22px, 0);
+      }
+    }
+
+    &--logo {
+      @include flexTable__rowFlex(24.5%);
+      @media (max-width: $screen-lg2-max) {
+         @include flexTable__rowFlex(192px);
+      }
+      @media (max-width: $screen-lg3-max) {
+        font-size: 13px;
+
+        & > div {
+          &:nth-of-type(1) {
+            flex: 0 0 75px;
+            max-width: 101;
+            padding: 13px;
+          }
+        }
+      }
+
+      &Absolute {
+        font-family: RationalTWDisplay-SemiBold;
+        font-size: 19px;
+        @include flexTable__Absolute(0, 0, auto, auto, auto);
+        @media (max-width: $screen-lg2-max) {
+          font-size: 13px;
+        }
+
+        & > div {
+          padding: 18px 17px 14px 30px;
+        }
+      }
+    }
+
+    &--contact {
+      @include flexTable__rowFlex(63.763%, auto, false);
+      border-bottom: none!important;
+      border-left: none!important;
+      border-right: none!important;
+
+      &Absolute {
+        font-family: RationalTWDisplay-SemiBold;
+        font-size: 19px;
+        @include flexTable__Absolute(0, 0, 0, 0, auto);
+        border-right: $table-border;
+        margin-bottom: 1px;
+        @media (max-width: $screen-lg2-max) {
+          font-size: 13px;
+        }
+
+        & > div {
+          padding: 14px 17px 14px 30px;
+          line-height: 1;
+          display: inline-block;
+          //border-right: $table-border;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    & > svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

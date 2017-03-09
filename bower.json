@@ -1,0 +1,17 @@
+{
+  "name": "margo",
+  "homepage": "",
+  "authors": [
+    "Karuma <mlynarz.p@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "scrollmagic": "^2.0.5",
+    "gsap": "^1.19.0",
+    "normalize-css": "^5.0.0",
+    "animate.css": "^3.5.2"
+  },
+  "overrides": {}
+}

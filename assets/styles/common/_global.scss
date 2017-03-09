@@ -1,0 +1,109 @@
+@mixin randomColor() {
+  background: rgba($red, $green, $blue, $alpha);
+}
+@mixin scrollSection($height: 100vh) {
+  display: block;
+  height: $height;
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+@mixin fullScreenWindow() {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+@mixin fontFace($font-name, $file-name, $isWof2: true) {
+  font-family: '#{$font-name}';
+  src: url('../fonts/#{$file-name}.eot');
+
+  @if $isWof2 == 'true' {
+    src: url('../fonts/#{$file-name}?#iefix') format('embedded-opentype'), url('../fonts/#{$file-name}.woff2') format('woff2'), url('../fonts/#{$file-name}.woff') format('woff'), url('../fonts/#{$file-name}.ttf') format('truetype');
+  }
+  @else {
+    src: url('../fonts/#{$file-name}?#iefix') format('embedded-opentype'), url('../fonts/#{$file-name}.woff') format('woff'), url('../fonts/#{$file-name}.ttf') format('truetype');
+  }
+}
+@mixin fullPageFlex($isFiller: 'false', $fillerWidth: 'auto', $nth: 1) {
+  display: flex;
+  align-items: center;
+  align-content: center;
+
+  @if $isFiller == 'true' {
+    justify-content: space-between;
+    overflow: hidden;
+
+    & > div:nth-of-type(#{$nth}) {
+      flex: 0 0 $fillerWidth;
+      min-width: $fillerWidth;
+      max-width: $fillerWidth;
+    }
+  }
+
+  @if $isFiller == 'false' {
+    justify-content: space-between;
+  }
+}
+@mixin flexTable($width) {
+  display: flex;
+  flex-direction: column;
+  width: $width;
+  // margin-top: 27.314vh;
+  & > div {
+    border-left: $table-border;
+    border-right: $table-border;
+    border-bottom: $table-border;
+    position: relative;
+
+    &:first-of-type {
+      border-top: $table-border;
+    }
+  }
+}
+@mixin flexTable__rowFlex($divOne__width, $divSecond__width:auto, $isBorder: 'true') {
+  display: flex;
+  align-items: stretch;
+  flex-flow: row nowrap;
+  overflow: hidden;
+
+  & > div {
+    padding-top: 21px;
+    padding-bottom: 17px;
+
+    &:nth-of-type(1) {
+      flex: 0 0 calc(#{$divOne__width} - 2*26px);
+      max-width: $divOne__width;
+      padding-left: 26px;
+      padding-right: 26px;
+    }
+
+    &:nth-of-type(2) {
+      flex: 1 1 $divSecond__width;
+
+      @if $isBorder == 'true' {
+        border-left: $table-border;
+      }
+    }
+  }
+}
+@mixin flexTable__Absolute($top:auto, $right:auto, $bottom:auto, $left:auto, $width:100%) {
+  position: relative;
+
+  & > div {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    width: $width;
+    border-bottom: $table-border;
+    border-left: $table-border;
+  }
+}

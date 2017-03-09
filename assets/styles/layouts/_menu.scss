@@ -1,0 +1,49 @@
+.nav {
+  // font-family: 'RationalTWDisplay-Medium';
+  font-size: 18px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 6vh;
+  left: 33px;
+  z-index: 999;
+  width: calc(100% - 6.927vw - 33px);
+  @media (max-width: $screen-lg3-max) {
+    font-size: 13px;
+  }
+
+  &__links {
+    position: relative;
+    transform: translateY(-.85em);
+  }
+
+  &--link {
+    padding: 4px 4px 2px;
+    margin: 0 5px;
+    color: $accent-color;
+    text-decoration: none;
+    border-bottom: 1px solid $accent-color0;
+    transition: border 0.45s;
+
+    &:hover {
+      border-bottom: 1px solid $accent-color;
+      //transition: border 3s;
+    }
+  }
+
+  &--svg {
+    border: none!important;
+    @media (max-width: $screen-lg3-max) {
+      & svg {
+        width: 75px;
+        height: auto;
+      }
+    }
+  }
+
+  &--LogoSvg {
+    fill: $accent-color;
+  }
+}

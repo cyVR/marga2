@@ -1,0 +1,66 @@
+$viewThird--infoWidth: 26.3vw;
+
+.viewThird {
+  @include scrollSection();
+  @include fullPageFlex( 'true', $viewThird--infoWidth, 1);
+  // position: relative;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // align-content: center;
+  // &__video {
+  //   max-width: 100%;
+  //   max-height: 100%;
+  //   margin: 0 auto;
+  //   display: block;
+  // }
+}
+
+.graphicDesignTable {
+  //min-width: 768px;
+  @include flexTable($viewThird--infoWidth);
+  margin-right: 6.927vw;
+
+  &--title {
+    font-family: 'RationalTWDisplay-SemiBold';
+    font-size: 19px;
+    @include flexTable__rowFlex(78.88%);
+  }
+
+  &--skills {
+    @include flexTable__rowFlex(100%, auto, false);
+  }
+
+  &--description {
+    line-height: 1.684em;
+    @include flexTable__rowFlex(84.554%, auto, false);
+
+    & > div:nth-of-type(1) {
+      padding-bottom: 34px;
+    }
+
+    &Absolute {
+      @include flexTable__Absolute(0, 0, 40px, 0);
+    }
+  }
+
+  &--emptyBlock {
+    @include flexTable__rowFlex(63.763%, auto, false);
+    border-bottom: none!important;
+    border-left: none!important;
+    border-right: none!important;
+
+    &Absolute {
+      font-family: RationalTWDisplay-SemiBold;
+      font-size: 19px;
+      @include flexTable__Absolute(0, 0, 0, 0, auto);
+      border-right: $table-border;
+      margin-bottom: 1px;
+
+      & > div {
+        padding: 18px 17px 14px 30px;
+        //border-right: $table-border;
+      }
+    }
+  }
+}
